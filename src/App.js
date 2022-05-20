@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 import NavBar from './components/navbar/navbar';
 import Login from './components/auth/login';
+import { Home } from './pages/Home';
 const UIkit = require('uikit')
 const Icons = require('uikit/dist/js/uikit-icons')
 UIkit.use(Icons);
@@ -32,8 +33,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={ localStorage.getItem('auth') ? <NavBar /> : <Login />}></Route>
-
+        <Route path='/' element={ localStorage.getItem('auth') ? <Home /> : <Login />}></Route>
+        <Route path='/home' element={ <Home />}></Route>
       </Routes>
     </Router>
   );
