@@ -3,4 +3,12 @@
 .navbar-container{
 
     background: $navbar-background;
+
+    .ul-list li a{
+        color: black;
+    }
+
+    .logout-btn{
+        margin-left: 50px;
+    }
 }
