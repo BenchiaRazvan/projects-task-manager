@@ -1,0 +1,12 @@
+@import "../../utils/variable.scss";
+
+html, body{
+
+    height: 100%;
+    background-color: $background-grey;
+}
+.login-btn{
+
+    background-color: $button-bk;
+    color: white;
+}
