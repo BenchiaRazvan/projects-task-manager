@@ -1,0 +1,26 @@
+@import "../../utils/variable.scss";
+
+.projects-container{
+
+    margin-top: 50px;
+
+
+    .project{
+
+        border-left: 5px solid $border;
+        background-color: white;
+
+        svg.svg-inline--fa.fa-diagram-project{
+            margin-right: 10px;
+            color: $border;
+        }
+        svg.svg-inline--fa.fa-list-check{
+            padding-top:5px;
+            margin-right: 5px;
+        }
+        .project-content{
+
+            padding: 15px;
+        }
+    }
+}
