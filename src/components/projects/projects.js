@@ -13,7 +13,14 @@ function ProjectsList() {
 
         <div className="projects-container">
             <div className="projects-content max-width">
-                <h2>You can see below the projects you are assigned to...</h2>
+                <div className="space-between">
+                    <h2>You can see below the projects you are assigned to...</h2>
+                    {/* {
+                        JSON.parse(localStorage.getItem('auth').role == "admin") ? 
+                            <button className="btn-default">Create project</button> : ""
+
+                    } */}
+                </div>
                 <hr />
                 <div className="uk-grid" uk-grid>
                     <div className="uk-width-1-3">
@@ -25,7 +32,7 @@ function ProjectsList() {
                                 <div className={`${localStorage.getItem('auth') ? JSON.parse(localStorage.getItem('auth').role == "admin") ? 'space-between' : "float-right" : "float-right"}`}>
                                     {   
                                         localStorage.getItem('auth') ? JSON.parse(localStorage.getItem('auth').role == "admin") ?
-                                           <> <button className="btn-danger">delete</button><Link to="/tasks" className="btn-default float-right"><FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon> tasks</Link></> : <Link to="/tasks" className="btn-default float-right"><FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon>tasks</Link> :<Link to="/tasks" className="btn-default float-right"><FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon>tasks</Link>
+                                           <> <button className="btn-danger">delete</button><Link to="/projects/tasks/2" className="btn-default float-right"><FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon> tasks</Link></> : <Link to="/projects/tasks/2" className="btn-default float-right"><FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon>tasks</Link> :<Link to="/projects/tasks/2" className="btn-default float-right"><FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon>tasks</Link>
                                             
                                     }
                                     

@@ -46,6 +46,15 @@
 
 }
 
+.btn-background{
+
+  background-color: #242F9B;
+  color: white;
+  margin-top: 0px !important;
+  margin-top:10px;
+  margin-bottom: 10px;;
+}
+
 .btn-danger{
 
   background-color: red;
@@ -81,7 +90,16 @@
   
   display: flex;
   justify-content: space-between;
-  
+
+}
+
+.text-decoration{
+
+  text-decoration: none;
+  color: black;
+}
+.text-decoration:hover{
+  text-decoration: none;
 }
 @keyframes App-logo-spin {
   from {
