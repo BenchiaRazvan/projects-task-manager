@@ -1,0 +1,29 @@
+@import '../../utils/variable.scss';
+
+.tasks-container{
+
+    margin-top: 50px;
+
+
+    .tasks-table{
+        border-left: 5px solid $border;
+
+        .thead-tasks{
+            background-color: $border;
+            
+            th{
+                color: white;
+                font-weight: 600;
+            }
+
+        }
+        svg.svg-inline--fa.fa-user.user-icon{
+            margin-right: 5px;
+        }
+    }
+
+}
+
+.uk-modal-dialog{
+    width: 800px !important;
+}

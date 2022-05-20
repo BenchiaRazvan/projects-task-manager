@@ -11,6 +11,7 @@ import NavBar from './components/navbar/navbar';
 import Login from './components/auth/login';
 import { Home } from './pages/Home';
 import { Projects } from './pages/Projects';
+import { Tasks } from './pages/Tasks';
 const UIkit = require('uikit')
 const Icons = require('uikit/dist/js/uikit-icons')
 UIkit.use(Icons);
@@ -37,7 +38,7 @@ function App() {
         <Route path='/' element={ localStorage.getItem('auth') ? <Home /> : <Login />}></Route>
         <Route path='/home' element={ <Home />}></Route>
         <Route path='/projects' element={ <Projects />}></Route>
-        <Route path='/projects/tasks/:taskId' element={<Projects />}></Route>
+        <Route path='/projects/tasks/:taskId' element={<Tasks />}></Route>
       </Routes>
     </Router>
   );
