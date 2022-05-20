@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './navbar.scss';
 
 function NavBar() {
@@ -23,7 +23,8 @@ function NavBar() {
                     </div>
                     <div className="uk-navbar-right">
                         <ul className="uk-navbar-nav uk-visible@s ul-list">
-                            <li><a className="uk-text-large" href="#0">projects</a></li>
+                            <li><Link className="uk-text-large" to="/home">home</Link></li>
+                            <li><Link className="uk-text-large" to="/projects">projects</Link></li>
                             <li><button className="btn-default logout-btn" onClick={logout}>LOGOUT</button></li>
                             
                         </ul>
@@ -33,7 +34,7 @@ function NavBar() {
                 <div id="sidenav" uk-offcanvas="flip: true" className="uk-offcanvas">
                     <div className="uk-offcanvas-bar">
                         <ul className="uk-nav">
-                            <li><a className="uk-text-large" href="#0">PROJECTS</a></li>
+                            <li><Link className="uk-text-large" to="/projects">PROJECTS</Link></li>
                         </ul>
                     </div>
                 </div>
