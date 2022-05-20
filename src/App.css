@@ -46,6 +46,20 @@
 
 }
 
+.btn-danger{
+
+  background-color: red;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Fredoka', sans-serif;
+  color: white;
+  text-decoration: none;
+  
+}
+
 .btn-default:hover{
 
     background: #242F9B;
@@ -56,6 +70,18 @@
 .margin-top{
 
   margin-top: 20px;
+}
+.float-right{
+
+  display: flex;
+  justify-content: right;
+}
+
+.space-between{
+  
+  display: flex;
+  justify-content: space-between;
+  
 }
 @keyframes App-logo-spin {
   from {
