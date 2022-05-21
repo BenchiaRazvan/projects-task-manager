@@ -1,0 +1,47 @@
+@import "../../utils/variable.scss";
+
+.comments-container{
+
+    .comments-content{
+
+        h4{
+            color: black;
+            font-family: $main-font;
+            margin-bottom: 0px;
+
+        }
+
+        .comment{
+
+            background-color: white;
+
+            .add-comment{
+
+                
+            }
+
+            .display-flex{
+
+                display: flex;
+                padding: 15px;
+
+                .user-alt{
+                    color: $border;
+                }
+                
+                svg.svg-inline--fa.fa-user-large{
+
+                    padding-top:3px;
+                    margin-right: 15px;
+                }
+
+                
+            }
+            
+        }
+    }
+    .ql-editor{
+
+        min-height: 250px;
+    }
+}

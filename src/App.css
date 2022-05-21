@@ -75,7 +75,10 @@
     color: white;
     text-decoration: none;
 }
-
+.ql-editor{
+        
+  min-height: 200px;
+}
 .margin-top{
 
   margin-top: 20px;
