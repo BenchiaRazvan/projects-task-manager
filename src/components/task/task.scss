@@ -1,0 +1,47 @@
+@import "../../utils/variable.scss";
+
+.signle-task-container{
+
+    margin-top: 50px;
+    
+    h1{
+        font-family: $main-font;
+        color: black;
+    }
+
+    .single-task-content{
+
+        border-left: 5px solid $border;
+     
+
+        .single-task{
+
+            padding-left: 20px;
+
+            .task-description{
+
+                max-width: 800px;
+                margin-top: 50px;
+                font-size: 17px;
+                font-family: $main-font;
+                color: black;
+            }
+        }
+        .border-bottom{
+            border-bottom: 1px solid $border;
+
+            select{
+
+                .color-option{
+                    background-color: $navbar-background;
+                    color: black;
+                }
+            }
+        }
+
+    }
+    svg.svg-inline--fa.fa-list-check{
+        color: $border;
+        margin-right: 20px;
+    }
+}
