@@ -3,10 +3,11 @@ import './tasks.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import 'react-quill/dist/quill.snow.css';
-import { toolbarOptions } from '../../utils/informations';
+import { toolbarOptions } from '../../utils/informations.js';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 const ReactQuill = require('react-quill'); // CommonJS
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+
 
 function TasksList() {
 
@@ -35,7 +36,7 @@ function TasksList() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td><Link to="/projects" className="text-decoration">UKT-12</Link></td>
+                                <td><Link to="/task/1" className="text-decoration">UKT-12</Link></td>
                                 <td><Link to="/projects" className="text-decoration">[]Get in touch</Link></td>
                                 <td><Link to="/projects" className="text-decoration"><FontAwesomeIcon icon={faUser} className="user-icon"></FontAwesomeIcon>Benchia Razvan</Link></td>
                                 <td><Link to="/projects" className="text-decoration">To do</Link></td>
@@ -64,11 +65,25 @@ function TasksList() {
                     <h2 class="uk-modal-title">Create task for UKT-project</h2>
                     <hr></hr>
                     <form>
-                        <p>TEst</p>
-                        <p>TEst</p>
-                        <ReactQuill />
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Task title" />
+                        </div>
+                        <div class="uk-margin">
+                            <select class="uk-select">
+                                <option>Option 01</option>
+                                <option>Option 02</option>
+                            </select>
+                        </div>
+                        <ReactQuill
+                            theme="snow"
+                            modules={modules}
+                            placeholder={"Add your task description..."}
+                            name="task-description"
+                            id="task-description"
+                        />
+                        <button type="submit" className="btn-default btn-background uk-margin-top">Add</button>
                     </form>
-                    <button class="uk-modal-close" type="button"></button>
+                    <button class="uk-modal-close" style={{ display:'none' }} type="button"></button>
                 </div>
             </div>
         </>
