@@ -59,6 +59,7 @@ function AddUser() {
                         </div>
                         <div class="uk-margin">
                             <select class="uk-select" name="role" onChange={handleInput}>
+                                <option defaultValue={""} hidden>Select...</option>
                                 <option value={0}>Developer</option>
                                 <option value={1}>Admin</option>
                             </select>

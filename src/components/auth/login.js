@@ -31,8 +31,12 @@ function Login() {
         }
         console.log(data)
         await axios.post("/login", data).then(res => {
-            if (res.status === 200) {
-                
+
+            if (res.data.length == 0) {
+
+                setErrorMessage("Invalid credentials")
+            }
+            else {
                 let data = {
 
                     'username': res.data[0].username,
@@ -45,9 +49,8 @@ function Login() {
                 navigate('/home')
                 window.location.reload(false)
             }
-            else {
-                setErrorMessage("Invalid Credentials")
-            }
+
+           
         })
 
 
@@ -80,7 +83,7 @@ function Login() {
                                             <button type="submit" className="uk-button uk-button-large uk-width-1-1 login-btn">Login</button>
                                         </div>
                                     </form>
-                                    {errorMessage ? errorMessage : ""}
+                                    {errorMessage ? <span className="red">{errorMessage}</span> : ""}
                                 </div>
                             </div>
                         </div>

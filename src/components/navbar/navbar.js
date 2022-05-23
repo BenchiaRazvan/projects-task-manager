@@ -9,6 +9,7 @@ function NavBar() {
 
         localStorage.removeItem("auth");
         navigate('/');
+        window.location.reload(false)
     }
     return (
 

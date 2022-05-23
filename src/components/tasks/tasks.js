@@ -34,7 +34,7 @@ function TasksList() {
         'userid': '',
 
     });
-    
+
     const [assignedDeveloper, setAssignedDeveloper] = useState({
 
         'projid': '',
@@ -166,7 +166,11 @@ function TasksList() {
 
                         <h2>You can see below the list of tasks</h2>
                         <button onClick={onOpenModal} className="btn-default btn-background">Create task</button>
-                        <button onClick={onOpenUserModal} className="btn-default btn-background">Assign user</button>
+                        {
+
+                            JSON.parse(localStorage.getItem('auth')).role == 1 ? <button onClick={onOpenUserModal} className="btn-default btn-background">Assign user</button> : ""
+
+                        }
                     </div>
                     <hr />
                     <table className="uk-table uk-table-striped tasks-table">
