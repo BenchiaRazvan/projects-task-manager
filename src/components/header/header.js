@@ -5,7 +5,6 @@ const tasksImg = require('../../assets/images/task.png');
 
 function Header() {
 
-
     return (
 
 
@@ -13,7 +12,7 @@ function Header() {
             <div className="header-content max-width">
                 <div class="uk-grid" uk-grid>
                     <div class="uk-width-1-2 left-side">
-                        <h1>Welcome back<br /> Razvan!</h1>
+                        <h1>Welcome back<br /> {JSON.parse(localStorage.getItem('auth')).username}</h1>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                         <div className="button-projects">
                             <Link to="/projects" className="btn-default margin-top">SEE THE PROJECTS</Link>
