@@ -112,3 +112,13 @@
     transform: rotate(360deg);
   }
 }
+.uk-modal-title{
+
+  padding-top:30px !important;
+}
+
+.home-page-container{
+
+  height: 100%;
+  background-color: red;
+}
