@@ -25,6 +25,9 @@ function NavBar() {
                         <ul className="uk-navbar-nav uk-visible@s ul-list">
                             <li><Link className="uk-text-large" to="/home">home</Link></li>
                             <li><Link className="uk-text-large" to="/projects">projects</Link></li>
+                            {
+                                JSON.parse(localStorage.getItem('auth')).role === 1 ? <li><Link className="uk-text-large" to="/user">Add user</Link></li> : ""
+                            }
                             <li><button className="btn-default logout-btn" onClick={logout}>LOGOUT</button></li>
                             
                         </ul>
