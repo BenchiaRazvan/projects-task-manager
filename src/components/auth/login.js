@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./login.scss";
 
@@ -6,14 +7,54 @@ function Login() {
 
     const navigate = useNavigate();
 
-    const login = () => {
+    const [errorMessage, setErrorMessage] = useState("");
+    const [userDetails, setUserDetails] = useState({
+        'email': '',
+        'password': ''
+    });
 
-        navigate('/home');
+    const handleInput = (e) => {
+
+        e.persist();
+        setUserDetails({ ...userDetails, [e.target.name]: e.target.value });
+
+    }
+    const login = async (e) => {
+
+        e.preventDefault()
+
+        const data = {
+
+            'email': userDetails.email,
+            'password': userDetails.password
+
+        }
+        console.log(data)
+        await axios.post("/login", data).then(res => {
+            if (res.status === 200) {
+                
+                let data = {
+
+                    'username': res.data[0].username,
+                    'userid': res.data[0].userid,
+                    'role': res.data[0].role,
+                    'email': res.data[0].email
+                }
+
+                localStorage.setItem('auth', JSON.stringify(data));
+                navigate('/home')
+                window.location.reload(false)
+            }
+            else {
+                setErrorMessage("Invalid Credentials")
+            }
+        })
+
 
     }
 
     return (
-        <div classNameName="login-container">
+        <div className="login-container">
             <div className="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
                 <div className="uk-width-1-1">
                     <div className="uk-container">
@@ -26,19 +67,20 @@ function Login() {
                                         <div className="uk-margin">
                                             <div className="uk-inline uk-width-1-1">
                                                 <span className="uk-form-icon" uk-icon="icon: mail"></span>
-                                                <input className="uk-input uk-form-large" type="text" />
+                                                <input className="uk-input uk-form-large" name="email" onChange={handleInput} value={userDetails.email} type="text" />
                                             </div>
                                         </div>
                                         <div className="uk-margin">
                                             <div className="uk-inline uk-width-1-1">
                                                 <span className="uk-form-icon" uk-icon="icon: lock"></span>
-                                                <input className="uk-input uk-form-large" type="password" />
+                                                <input className="uk-input uk-form-large" name="password" onChange={handleInput} value={userDetails.password} type="password" />
                                             </div>
                                         </div>
                                         <div className="uk-margin">
-                                            <button className="uk-button uk-button-large uk-width-1-1 login-btn">Login</button>
+                                            <button type="submit" className="uk-button uk-button-large uk-width-1-1 login-btn">Login</button>
                                         </div>
                                     </form>
+                                    {errorMessage ? errorMessage : ""}
                                 </div>
                             </div>
                         </div>
