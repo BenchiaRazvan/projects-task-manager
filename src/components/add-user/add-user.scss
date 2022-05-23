@@ -1,0 +1,18 @@
+@import '../../utils/variable.scss';
+
+.add-user-container{
+
+    margin-top: 50px;
+
+    .add-user-content{
+
+        margin: 0 auto;
+        max-width: 600px;
+
+        .user-added-message{
+
+            color: green;
+            font-size: 17px;
+        }
+    }
+}
